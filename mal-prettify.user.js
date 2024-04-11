@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MAL Prettifier
 // @namespace    http://tampermonkey.net/
-// @version      2
+// @version      3
 // @description  Makes certain parts of MAL prettier
 // @author       Matty
 // @match        *://myanimelist.net/animelist/*
