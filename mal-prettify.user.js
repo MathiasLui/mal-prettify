@@ -4,7 +4,7 @@
 // @version      3
 // @description  Makes certain parts of MAL prettier
 // @author       Matty
-// @match        *://myanimelist.net/animelist/*
+// @match        *://myanimelist.net/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=myanimelist.net
 // @grant        none
 // @updateURL    https://github.com/MathiasLui/mal-prettify/raw/main/mal-prettify.user.js
