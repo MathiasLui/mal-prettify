@@ -193,10 +193,20 @@
 
     function styleMainPage() {
         // JavaScript and styling for the main page
+
     }
 
     function applyGlobalStyles() {
         // Common CSS/JS that apply to all pages
+        const css = `
+        a.header-profile-button {
+            border-radius: 50%;
+        }
+
+        a.header-profile-button:hover {
+            border-radius: 0;
+        }
+        `;
     }
 
     // Main execution block
@@ -205,6 +215,6 @@
     } else if (window.location.pathname === '/') {
         styleMainPage();
     }
-    
+
     applyGlobalStyles();
 })();
