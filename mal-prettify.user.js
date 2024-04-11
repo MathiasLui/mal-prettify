@@ -14,8 +14,14 @@
 (function() {
     'use strict';
 
+    function log(message) {
+        console.log('[Tampermonkey-MAL-Prettify] ' + message);
+    }
+
     function styleAnimeList() {
         // Styles specific to /animelist page
+        log('Applying options for /animelist');
+
         var css = `
         .status-menu .status-button span {
             display: inline-block; /* Allows the span to be transformed */
@@ -87,6 +93,8 @@
 
         // Prepare the updateAnimeStats function for use
         function updateAnimeStats() {
+            log('Updating Anime stats');
+
             let listUnit = document.querySelector('#list-container .list-block .list-unit');
             let isCompletedPage = listUnit.classList.contains('completed');
             let animeTable = listUnit.querySelector('.list-table');
@@ -172,10 +180,10 @@
                     if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
                         // Whenever the loading spinner stops spinning the count changes (except the last time) so update it in the UI
                         if (loadingSpinner.style.display === 'none') {
-                            console.log('Anime loading has stopped. Updating count...');
+                            log('Anime loading has stopped. Updating count...');
                             updateAnimeStats();
                         } else {
-                            console.log('Loading has started...');
+                            log('Loading has started...');
                         }
                     }
                 }
@@ -187,17 +195,20 @@
             // Start observing the target node for configured mutations
             observer.observe(loadingSpinner, config);
         } else {
-            console.log('Loading spinner not found.');
+            log('Loading spinner not found.');
         }
     }
 
     function styleMainPage() {
         // JavaScript and styling for the main page
+        log('Applying options for /');
 
     }
 
     function applyGlobalStyles() {
         // Common CSS/JS that apply to all pages
+        log('Applying global options');
+
         const css = `
         a.header-profile-button {
             border-radius: 50%;
