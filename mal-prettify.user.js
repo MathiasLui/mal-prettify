@@ -7,6 +7,8 @@
 // @match        *://myanimelist.net/animelist/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=myanimelist.net
 // @grant        none
+// @updateURL    https://github.com/MathiasLui/mal-prettify/raw/main/mal-prettify.user.js
+// @downloadURL  https://github.com/MathiasLui/mal-prettify/raw/main/mal-prettify.user.js
 // ==/UserScript==
 
 (function() {
