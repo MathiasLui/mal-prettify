@@ -207,6 +207,11 @@
             border-radius: 0;
         }
         `;
+        
+        // Add styles
+        var style = document.createElement('style');
+        style.innerHTML = css;
+        document.head.appendChild(style);
     }
 
     // Main execution block
