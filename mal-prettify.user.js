@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MAL Prettifier
 // @namespace    http://tampermonkey.net/
-// @version      4
+// @version      5
 // @description  Makes certain parts of MAL prettier
 // @author       Matty
 // @match        *://myanimelist.net/*
@@ -199,10 +199,62 @@
         }
     }
 
+    function styleProfile() {
+        // JavaScript and styling for the profile page
+        log('Applying options for /profile');
+
+        const css = `
+        .btn-profile-submit {
+            border-radius: 10px;
+        }
+        `;
+        
+        // Add styles
+        var style = document.createElement('style');
+        style.innerHTML = css;
+        document.head.appendChild(style);
+    }
+
     function styleMainPage() {
         // JavaScript and styling for the main page
         log('Applying options for /');
 
+        const css = `
+        ul li.ranking-unit > span.rank {
+            display: none;
+        }
+
+        ul li.ranking-unit:nth-child(1) {
+            background: linear-gradient(180deg, gold -30%, transparent 90%);
+        }
+
+        ul li.ranking-unit:nth-child(2) {
+            background: linear-gradient(180deg, silver -30%, transparent 90%);
+        }
+
+        ul li.ranking-unit:nth-child(3) {
+            background: linear-gradient(180deg, #CD7F32 -30%, transparent 90%);
+        }
+        
+        ul li.ranking-unit .data .h3_side .title {
+            text-shadow: 0px 0px 6px black;
+        }
+
+        ul li.ranking-unit {
+            padding-top: 8px;
+        }
+        
+        ul li.ranking-unit .data > a {
+            border-radius: 10px;
+            padding: 4px 7px !important;
+            margin-top: 5px !important;
+        }
+        `;
+        
+        // Add styles
+        var style = document.createElement('style');
+        style.innerHTML = css;
+        document.head.appendChild(style);
     }
 
     function applyGlobalStyles() {
@@ -217,6 +269,14 @@
         a.header-profile-button:hover {
             border-radius: 0;
         }
+
+        .wrapper #menu {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding-left: 6px;
+            width: 1054; /* Original width minus padding */
+            background: linear-gradient(90deg, #2e51a2 34%, orange 140%);
+        }
         `;
         
         // Add styles
@@ -228,6 +288,8 @@
     // Main execution block
     if (window.location.pathname.startsWith('/animelist')) {
         styleAnimeList();
+    } else if (window.location.pathname.startsWith('/profile')) {
+        styleProfile();
     } else if (window.location.pathname === '/') {
         styleMainPage();
     }
