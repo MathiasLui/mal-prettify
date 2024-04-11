@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MAL Prettifier
 // @namespace    http://tampermonkey.net/
-// @version      6
+// @version      7
 // @description  Makes certain parts of MAL prettier
 // @author       Matty
 // @match        *://myanimelist.net/*
@@ -274,7 +274,7 @@
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             padding-left: 6px;
-            width: 1054 !important; /* Original width minus padding */
+            width: 1054px !important; /* Original width minus padding */
             background: linear-gradient(90deg, #2e51a2 34%, orange 140%);
         }
         `;
