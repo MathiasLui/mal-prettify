@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MAL Prettifier
 // @namespace    http://tampermonkey.net/
-// @version      9
+// @version      10
 // @description  Makes certain parts of MAL prettier
 // @author       Matty
 // @match        *://myanimelist.net/*
@@ -259,6 +259,10 @@
         .picSurround img,
         li.btn-anime {
             border-radius: 10px;
+        }
+
+        .widget-content {
+            margin-top: 8px;
         }
         `;
         
