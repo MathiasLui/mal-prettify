@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MAL Prettifier
 // @namespace    http://tampermonkey.net/
-// @version      7
+// @version      8
 // @description  Makes certain parts of MAL prettier
 // @author       Matty
 // @match        *://myanimelist.net/*
@@ -249,6 +249,15 @@
             padding: 4px 7px !important;
             margin-top: 5px !important;
         }
+
+        .auto-recommendations .items a,
+        .image img,
+        .data-image a,
+        .picSurround .hoverinfo_trigger img,
+        .picSurround img,
+        li.btn-anime {
+            border-radius: 10px;
+        }
         `;
         
         // Add styles
@@ -283,6 +292,12 @@
         var style = document.createElement('style');
         style.innerHTML = css;
         document.head.appendChild(style);
+
+        const copyrightElement = document.getElementById('copyright');
+
+        if (copyrightElement) {
+            copyrightElement.innerHTML += "<br/>[This website was altered via a userscript]";
+        }
     }
 
     // Main execution block
