@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MAL Prettifier
 // @namespace    http://tampermonkey.net/
-// @version      8
+// @version      9
 // @description  Makes certain parts of MAL prettier
 // @author       Matty
 // @match        *://myanimelist.net/*
@@ -242,6 +242,8 @@
 
         ul li.ranking-unit {
             padding-top: 8px !important;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
         
         ul li.ranking-unit .data > a {
